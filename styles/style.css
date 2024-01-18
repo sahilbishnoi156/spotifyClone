@@ -9,10 +9,11 @@ body{
     background-color: #000;
     font-family: sans-serif;
     color: white;
+    overflow: hidden;
 }
 
 #frame1{
-    height: 100vh;
+    height: 90vh;
     width: 100vw;
     padding: 8px;
     display: flex;
@@ -20,7 +21,11 @@ body{
     justify-content: center;
     gap: 8px;
 }
+body::-webkit-scrollbar{
+    display: none;
+}
 #left{
+    overflow: hidden;
     height: 100%;
     width: 35vw;
     border-radius: 10px;
@@ -43,6 +48,8 @@ body{
 #left nav div i, #library div i{
     margin-right: 15px;
     margin-left: 15px;
+    cursor: pointer;
+
 }
 
 #left #library{
@@ -89,9 +96,12 @@ body{
 
 #search-bar i{
     font-size: 20px;
+    cursor: pointer;
 }
+
 #search-bar input{
     height: 100%;
+    /* display: none; */
     background-color: transparent;
     outline: none;
     border: 2px solid gray;
@@ -99,7 +109,6 @@ body{
     color: white;
     border-radius: 8px;
 }
-
 #right{
     height: 100%;
     width: 100%;
@@ -125,7 +134,7 @@ body{
     height: 70px;
     width: 100%;
     margin-bottom: 10px;
-    border-radius: 10px;
+    border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: start;
@@ -136,7 +145,7 @@ body{
     height: 90%;
     width: 70px;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 .playlist-item div{
     display: flex;
@@ -153,11 +162,18 @@ body{
 }
 
 #right nav{
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 16px 16px;
-}
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 200;
+    background: #121212;
+} 
+
 #right nav div{
     display: flex;
     align-items: center;
@@ -165,14 +181,15 @@ body{
     gap: 20px;
 }
 #right nav div i{
-
     height: 36px;
     width: 36px;
-    background: rgb(19, 19, 19);
+    background: rgb(11, 11, 11);
     border-radius: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+
 }
 
 #top-playlists{
@@ -182,16 +199,15 @@ body{
 #top-playlists-items{
     margin-top: 10px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Creates three equal columns */
-    gap: 8px; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 10px; 
 }
 .top-playlists-item{
     position: relative;
     color: white;
     height: 50px;
     width: 100%;
-    margin-bottom: 10px;
-    border-radius: 4px;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: start;
@@ -218,6 +234,27 @@ body{
     justify-content: center;
     color: #000;
     cursor: pointer;
+}
+.madforUserButton{
+    transition: .1s;
+    position: absolute;
+    top: 52%;
+    right: 15px;
+    background: rgb(22, 173, 22);
+    height: 50px;
+    width: 50px;
+    opacity: 0;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    transition: .2s ease-in-out;
+    justify-content: center;
+    color: #000;
+    cursor: pointer;
+}
+.made-for-user-item:hover .madforUserButton{
+    top: 48%;
+    opacity: 1;
 }
 .top-playlists-item img{
     height: 100%;
@@ -247,7 +284,17 @@ body{
 #made-for-user h1{
     margin-bottom: 18px;
 }
-
+#made-for-user-heading{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 10px;
+    color: rgb(131, 130, 130);
+}
+#made-for-user-heading div:hover{
+    border-bottom: 1px solid rgb(131, 130, 130);
+    cursor: pointer;
+}
 #made-for-user-items{
     display: flex;
     align-items: center;
@@ -256,6 +303,7 @@ body{
 }
 
 .made-for-user-item{
+    position: relative;
     /* height: 250px; */
     flex-shrink: 0;
     width: 200px;
@@ -274,4 +322,135 @@ body{
 .made-for-user-item div p{
     margin-top: 8px;
     color: gray;
+}
+
+#song-div{
+    padding: 0 20px;
+    height: 80px;
+    width: 100vw;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+#music-options{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 1rem;
+}
+#music-options i{
+    color: rgb(134, 132, 132);
+}
+
+#now-playing-view{
+    font-size: .5rem;
+    border: 2px solid rgb(134, 132, 132);
+    padding: 4px 4px;
+    border-radius: 2px;
+}
+#now-playing-view i{
+    margin-left: 1px;
+}
+
+#volume-bar{
+    height: 4px;
+    width: 100px;
+    background: white;
+    border-radius: 20px;
+}
+
+
+.song-div-title{
+    color: white;
+    height: 100%;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 20px;
+}
+.song-div-title i{
+    color: rgb(123, 123, 123);
+}
+
+.song-div-title img{
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.song-div-title div{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2px;
+}
+.song-div-title span:nth-child(1){
+    color: white;
+    font-size: .9rem;
+}
+.song-div-title span:nth-child(2){
+    font-size: 12px;
+    color: rgb(161, 157, 157);
+}
+
+#music-prgress{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+#progress-bar{
+    width: 550px;
+    height: 4px;
+    background: rgb(173, 172, 172) ;
+    border-radius: 10px;
+}
+
+.song-playButton{
+    height: 35px;
+    width: 35px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.song-playButton i{
+    color: #000;
+}
+
+#progress-bar-outer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 0.7rem;
+    color: rgb(146, 144, 144);
+}
+#music-controls{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+#music-controls i:nth-child(2), #music-controls i:nth-child(4){
+    font-size: 1.2rem;
+}
+#music-controls i:nth-child(1), #music-controls i:nth-child(5){
+    font-size: 1rem;
+    color: rgb(97, 95, 95);
+}
+.song-playButton i{
+    font-size: 1rem;
+    color: #000 !important;
 }
