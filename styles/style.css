@@ -174,7 +174,25 @@ body::-webkit-scrollbar{
     z-index: 200;
     background: #121212;
 } 
-
+#signup{
+    text-decoration: none;
+    color: rgb(142, 142, 142);
+    font-weight: bold;
+}
+#login{
+    text-decoration: none;
+    color: black;
+    background: white;
+    padding: 12px 30px;
+    font-weight: bold;
+    border-radius: 4rem;
+}
+#signup:hover{
+    color: white!important;
+}
+#signup:hover, #login:hover{
+    transform: scale(1.04);
+}
 #right nav div{
     display: flex;
     align-items: center;
@@ -454,4 +472,46 @@ body::-webkit-scrollbar{
 .song-playButton i{
     font-size: 1rem;
     color: #000 !important;
+}
+
+footer #footer-upper{
+    display: flex;
+    align-items: start; 
+    justify-content: space-between;
+    padding: 4rem 2rem;
+}
+footer #footer-lower{
+    padding: 0rem 2rem 4rem 2rem;
+}
+#footer-lower-line{
+    height: 1px;
+    width: 100%;
+    background: rgb(72, 72, 72);
+    margin-bottom: 2rem;
+}
+#footer-upper ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+#footer-upper li{
+    color: gray;
+}
+.footer-headings{
+    font-weight: bold;
+    color: white!important;
+}
+#link-icons{
+    display: flex;
+    gap: 20px;
+}
+#link-icons i{
+    font-size: 1.1rem;
+    background: #2f2e2e;
+    padding: 10px;
+    border-radius: 100%;
+}
+#link-icons i:hover{
+    background: #727272;
 }
