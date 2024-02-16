@@ -40,11 +40,11 @@ function setSongData(data) {
 }
 
 const colors = [
-  "#47180b",
-  "#959192",
-  "#415a4c",
   "#142c67",
   "#47180b",
+  "#415a4c",
+  "#47180b",
+  "#959192",
   "#959192",
 ];
 allPlaylistsItems.forEach((item, ind) => {

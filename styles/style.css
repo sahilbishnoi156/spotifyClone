@@ -700,7 +700,7 @@ footer #footer-lower {
 
 #link-icons {
   display: flex;
-  gap: 20px;
+  gap: 18px;
 }
 #link-icons i {
   font-size: 1.1rem;

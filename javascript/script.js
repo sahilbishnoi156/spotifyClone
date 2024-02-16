@@ -122,8 +122,8 @@ function exitFullscreen() {
   }
 }
 function getOut() {
-  expanded.style.display = "none";
   exitFullscreen();
+  expanded.style.display = "none";
 }
 expand.addEventListener("click", function () {
   expanded.innerHTML = `
@@ -133,7 +133,7 @@ expand.addEventListener("click", function () {
       <button onclick="getOut()">Close</button>`;
   if (document.fullscreenElement) {
     // If already in fullscreen, exit fullscreen
-    exitFullscreen();
+    getOut();
   } else {
     expanded.style.display = "block";
     enterFullscreen();
