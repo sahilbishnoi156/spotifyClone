@@ -71,7 +71,7 @@ const libraryData = [
   },
   {
     image: "https://i.scdn.co/image/ab67616d0000b273f907de96b9a4fbc04accc0d5",
-    name: "God's Plan",
+    name: "God Plan",
     about: "playlist · 58 songs",
     isArtist: false,
     song: "/assets/bachke.mp3",

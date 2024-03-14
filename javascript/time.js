@@ -13,5 +13,5 @@ function getTimeOfDay() {
 }
 if(localStorage.getItem('userIsLoggedIn')){
     const timeHeading = document.getElementById('top-playlist-time');
-    timeHeading.innerHTML = getTimeOfDay();
+    timeHeading.innerText = getTimeOfDay();
 }

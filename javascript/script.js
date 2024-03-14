@@ -26,6 +26,7 @@ if (localStorage.getItem("userIsLoggedIn")) {
   logOut.forEach((item) => {
     item.addEventListener("click", function () {
       localStorage.removeItem("userIsLoggedIn");
+      localStorage.removeItem("currentUserEmail");
       window.location.reload();
     });
   });
@@ -87,6 +88,7 @@ document.getElementById("search").addEventListener("click", function () {
   search.style.display = "block";
 });
 
+// make full screen
 const expand = document.getElementById("expand");
 const expanded = document.querySelector(".expanded");
 const fullscreenElement = document.getElementById("yourFullscreenElement");
@@ -143,6 +145,7 @@ expand.addEventListener("click", function () {
 
 //! Navbar 
 const rightHome = document.getElementById("right-home");
+
 rightHome.addEventListener("scroll", function () {
   const colorHead = document.getElementById("color-heading");
   const headerImg = document.querySelector(".bgImg");

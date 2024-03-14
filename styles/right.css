@@ -1,5 +1,5 @@
 #right-search{
-    display: none;
+    display: none;    
     height: 100%;
     width: 100%;
     background-color: #121212;
@@ -54,6 +54,20 @@
     flex-shrink: 0;
     height: 210px;
     width: 194px;
-    background: white;
-    border-radius: 5px;
+    background: black;
+    border-radius: 12px;
+    position: relative;
+}
+.search-item img{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    opacity: 70%;
+}
+.search-item span{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-size: 20px;
 }
